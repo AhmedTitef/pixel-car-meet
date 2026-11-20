@@ -1,0 +1,296 @@
+<!doctype html>
+<!--
+  Pixel Car Meet privacy policy. Ready to host next to support.html and the fonts/ folder.
+  Hosted on GitHub Pages (https://ahmedtitef.github.io/pixel-car-meet/). The contact is the game's own Send feedback until a
+  support email exists; when it does, add it beside every "Send feedback" here, in support.html and in terms.html.
+  Matches docs/SAFETY.md and docs/PLATFORM.md as of 16 Nov 2026. If what the game keeps changes, change this page.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pixel Car Meet privacy policy</title>
+<meta name="description" content="What Pixel Car Meet keeps, for how long, who helps run the game, and how to delete your account.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0c0e15">
+<style>
+  @font-face { font-family: "Jersey 10"; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/jersey-10-latin.woff2) format("woff2"); }
+  @font-face { font-family: "Atkinson Hyperlegible Next"; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/atkinson-hyperlegible-next-latin-400-normal.woff2) format("woff2"); }
+  @font-face { font-family: "Atkinson Hyperlegible Next"; font-style: normal; font-weight: 700; font-display: swap; src: url(fonts/atkinson-hyperlegible-next-latin-700-normal.woff2) format("woff2"); }
+
+  :root {
+    --night: #0c0e15;
+    --ink: #17191f;
+    --pole: #2a2e39;
+    --cream: #fbf7ec;
+    --cream-2: #efe8d6;
+    --curb: #f2b705;
+    --soft: #5d6168;
+    --mute: #a7acb8;
+    --sign-top: 114px;
+    --f-pixel: "Jersey 10", "Courier New", monospace;
+    --f-body: "Atkinson Hyperlegible Next", "Trebuchet MS", sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background-color: var(--night);
+    background-image:
+      radial-gradient(circle at 30% 40%, rgba(255, 255, 255, .05) 0 .7px, transparent 1.3px),
+      radial-gradient(circle at 70% 75%, rgba(255, 255, 255, .035) 0 .6px, transparent 1.2px);
+    background-size: 11px 13px, 17px 19px;
+    color: var(--cream);
+    font: 400 17px/1.55 var(--f-body);
+  }
+  ::selection { background: var(--curb); color: var(--ink); }
+  :focus-visible { outline: 3px solid var(--curb); outline-offset: 3px; border-radius: 4px; }
+  a { color: inherit; text-decoration-color: var(--curb); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 4px; }
+  strong { font-weight: 700; }
+
+  .wrap { max-width: 42rem; margin: 0 auto; padding: 0 max(16px, env(safe-area-inset-right)) 56px max(16px, env(safe-area-inset-left)); }
+
+  /* The sign hangs under a lot lamp. The light is drawn in hard steps, like the game's light pools. */
+  .lot { position: relative; padding-top: 22px; }
+  /* The lamp stands behind the sign. Its beam is drawn twice from the same shapes: over the night in the SVG,
+     and on the sign as a background, lined up so they read as one beam. --sign-top is where the sign starts. */
+  .lamp { position: absolute; top: 0; right: -6px; width: 168px; height: var(--sign-top); overflow: hidden; pointer-events: none; z-index: 0; }
+  .lamp .pool, .sign::before { animation: strike 1.4s linear 0.2s both; }
+  @keyframes strike {
+    0% { opacity: 0; } 14% { opacity: .75; } 20% { opacity: .1; } 34% { opacity: .9; } 40% { opacity: .35; } 62% { opacity: 1; } 100% { opacity: 1; }
+  }
+  .sign {
+    position: relative; z-index: 1; isolation: isolate;
+    margin-top: calc(var(--sign-top) - 22px);
+    background: var(--cream); color: var(--ink);
+    border: 2px solid var(--ink); border-radius: 18px;
+    box-shadow: 0 6px 0 var(--ink), 0 22px 48px rgba(0, 0, 0, .5);
+    padding: 16px 20px 20px;
+  }
+  .sign::before {
+    content: ""; position: absolute; inset: -2px; border-radius: 18px; pointer-events: none; z-index: -1;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-260 0 344 400' shape-rendering='crispEdges'%3E%3Cg fill='%23f2b705'%3E%3Cpolygon points='36,26 52,26 167,400 -252,400' opacity='.07'/%3E%3Cpolygon points='38,26 50,26 129,400 -178,400' opacity='.08'/%3E%3Cpolygon points='40,26 48,26 91,400 -97,400' opacity='.1'/%3E%3C/g%3E%3C/svg%3E") no-repeat right -6px top calc(-1 * var(--sign-top)) / 688px 800px;
+  }
+  .brand { margin: 0; font: 400 26px/1 var(--f-pixel); letter-spacing: .02em; }
+  .brand::after { content: ""; display: block; width: 46px; height: 5px; margin-top: 7px; background: var(--curb); border: 2px solid var(--ink); }
+  h1 { margin: 12px 0 0; font: 400 clamp(54px, 15vw, 84px)/.82 var(--f-pixel); letter-spacing: .005em; text-wrap: balance; }
+  .updated { margin: 12px 0 0; color: var(--soft); font-size: 15px; }
+
+  .curb {
+    height: 16px; margin: 30px 0 26px;
+    background: repeating-linear-gradient(-45deg, var(--curb) 0 14px, var(--ink) 14px 28px);
+    border: 2px solid var(--ink); border-radius: 3px;
+    box-shadow: 0 3px 0 #000;
+  }
+
+  .sheet {
+    background: var(--cream); color: var(--ink);
+    border: 2px solid var(--ink); border-radius: 18px;
+    box-shadow: 0 5px 0 var(--ink);
+    padding: 18px 20px 20px; margin: 0 0 30px;
+  }
+  .sheet h2 { margin: 0 0 8px; font: 400 36px/.95 var(--f-pixel); }
+  .sheet a { text-decoration-color: var(--ink); }
+  .sheet ul { margin: 6px 0 0; padding-left: 1.15em; }
+  .sheet li { margin: 6px 0; }
+  .sheet li::marker { color: var(--soft); }
+
+  /* What we keep: the time is the thing people look for, so it's set big in the pixel face. */
+  .keep { list-style: none; margin: 4px 0 0; padding: 0; }
+  .keep li { display: grid; grid-template-columns: 11.5rem minmax(0, 1fr); gap: 2px 16px; align-items: start; padding: 14px 0; border-top: 2px dashed rgba(23, 25, 31, .2); margin: 0; }
+  .keep li:first-child { border-top: 0; padding-top: 6px; }
+  .keep .for { font: 400 30px/.92 var(--f-pixel); }
+  .keep .for small { display: block; margin-top: 4px; font: 400 14px/1.25 var(--f-body); color: var(--soft); }
+  .keep p { margin: 0; }
+  .keep p + p { margin-top: 6px; }
+
+  .bay { padding: 2px 0 0; margin: 0 0 30px; }
+  .bay + .bay { border-top: 2px dashed rgba(251, 247, 236, .16); padding-top: 26px; }
+  .bay h2 { margin: 0 0 8px; font: 400 34px/.95 var(--f-pixel); color: var(--curb); }
+  .bay p, .bay li { max-width: 62ch; }
+  .bay p { margin: 0 0 10px; }
+  .bay ul { margin: 6px 0 10px; padding-left: 1.15em; }
+  .bay li { margin: 6px 0; }
+  .bay li::marker { color: var(--curb); }
+
+  footer { margin-top: 40px; padding-top: 18px; border-top: 2px solid rgba(251, 247, 236, .16); color: var(--mute); font-size: 15px; }
+  footer p { margin: 0 0 6px; }
+
+  @media (max-width: 30rem) {
+    .keep li { grid-template-columns: 1fr; }
+    :root { --sign-top: 96px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lamp .pool, .sign::before { animation: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="lot">
+    <svg class="lamp" viewBox="0 0 84 130" preserveAspectRatio="xMaxYMin slice" shape-rendering="crispEdges" aria-hidden="true" focusable="false">
+      <g class="pool" fill="#f2b705">
+        <polygon points="36,26 52,26 84,130 -44,130" opacity=".07"/>
+        <polygon points="38,26 50,26 72,130 -22,130" opacity=".08"/>
+        <polygon points="40,26 48,26 60,130 2,130" opacity=".1"/>
+      </g>
+      <rect x="62" y="12" width="5" height="118" fill="var(--pole)"/>
+      <rect x="40" y="12" width="27" height="4" fill="var(--pole)"/>
+      <rect x="34" y="16" width="20" height="7" fill="#3a3f4c"/>
+      <rect x="34" y="16" width="20" height="2" fill="#4b5161"/>
+      <rect x="37" y="23" width="14" height="3" fill="#f2b705"/>
+      <rect x="40" y="23" width="8" height="2" fill="#fff3c4"/>
+    </svg>
+    <div class="sign">
+      <p class="brand">Pixel Car Meet</p>
+      <h1>Privacy policy</h1>
+      <p class="updated">Last updated 19 November 2026</p>
+    </div>
+  </header>
+
+  <div class="curb" aria-hidden="true"></div>
+
+  <main>
+    <section class="sheet" aria-labelledby="short">
+      <h2 id="short">The short version</h2>
+      <ul>
+        <li>We keep what the game needs to run, and delete it on a schedule.</li>
+        <li>No ads and no tracking. We never sell your data.</li>
+        <li>A photo you snap to build your car or check in a coffee is read once, then deleted.</li>
+        <li>You can delete your account, and everything we hold about it, from inside the game.</li>
+      </ul>
+    </section>
+
+    <section class="bay" aria-labelledby="who">
+      <h2 id="who">Who runs Pixel Car Meet</h2>
+      <p>Pixel Car Meet is made by Ahmed Elsayed, the seller named on the App Store. For anything about your data, write to us in the game: <strong>Account</strong>, then <strong>Send feedback</strong>.</p>
+    </section>
+
+    <section class="sheet" aria-labelledby="keep">
+      <h2 id="keep">What we keep, and for how long</h2>
+      <ul class="keep">
+        <li>
+          <div class="for">Until you delete it<small>your account</small></div>
+          <div>
+            <p>An account ID made from your Sign in with Apple ID. We never ask for your name or email, and we don't keep your Apple ID.</p>
+            <p>The age range Apple's age sheet shares, such as "16–17". It decides what opens for you. If you share it without an account (to turn on nights in a row and a daily reminder), it stays on your phone and isn't sent to us.</p>
+            <p>If you agree to the photo and message checks, the date you agreed. It's removed if you take that permission back.</p>
+            <p>The date you agreed to the terms of use. The list of players you've blocked, so it follows you to a new phone. A key that lets us disconnect Sign in with Apple when you delete your account, stored encrypted and used for nothing else.</p>
+          </div>
+        </li>
+        <li>
+          <div class="for">Until you delete it<small>your profile and garage</small></div>
+          <div>
+            <p>Your username, or the name the game picked. Your car, its parts and looks, the plate you type for each of your cars, and your car file. Friends, scores, best runs, reactions, gifts, coffee check-ins, your Spotbook, and league and rival results. Your crew, and your cup entries and results. The days you played, which count toward the nights-in-a-row looks.</p>
+            <p>Which paid items you own. A purchase is tied to your game account, and if Apple refunds it, the items are removed.</p>
+          </div>
+        </li>
+        <li>
+          <div class="for">Until you remove it<small>18 and older only</small></div>
+          <div>
+            <p>Up to 3 real photos of your car on your profile. Each photo is checked first, then faces and other cars' number plates are blurred on your phone, and only the blurred photo is kept. Your own number plate is blurred too unless you choose to show it; then anyone who sees your car card sees it. An Instagram handle, if you add one.</p>
+          </div>
+        </li>
+        <li>
+          <div class="for">30 days<small>chat</small></div>
+          <div><p>Chat you type at the meet, and every line in your crew's chat, so a report can be checked. Then it's deleted.</p></div>
+        </li>
+        <li>
+          <div class="for">12 days<small>gameplay events</small></div>
+          <div><p>Things like "a race started" or "a goal was finished", with your account ID, or a random install ID if you're not signed in. Nothing you type. After 12 days only daily totals are kept, with no IDs.</p></div>
+        </li>
+        <li>
+          <div class="for">90 days<small>feedback you send us</small></div>
+          <div><p>If you use "Send feedback", we keep what you wrote, the picture of the screen if you chose to attach one, and what the game adds by itself: its version, your phone model and system version, and the screen you were on. It's kept with your account ID, or with the random install ID if you're not signed in, so we can answer you in the game. Only we read it; other players never see it. It's deleted after 90 days, or with your account. Please don't put personal details in it.</p></div>
+        </li>
+        <li>
+          <div class="for">48 hours<small>feed cards</small></div>
+          <div><p>The cards the game makes about your moments, like a new build or a record.</p></div>
+        </li>
+        <li>
+          <div class="for">30 days<small>your runs</small></div>
+          <div><p>For each scored run, what you did in it: when you tapped, shifted or steered. Our server plays the run again from those taps to check the result before it counts on a board. Then they're deleted.</p></div>
+        </li>
+        <li>
+          <div class="for">9 days<small>board scores</small></div>
+          <div><p>Scores on the boards, such as Today's Challenge.</p></div>
+        </li>
+        <li>
+          <div class="for">30 days<small>check records</small></div>
+          <div><p>A note that a photo was read or a message was checked: when, which kind, and what it cost us. It has no account ID, and never the photo or the words.</p></div>
+        </li>
+        <li>
+          <div class="for">Until deleted<small>reports</small></div>
+          <div><p>Reports you make, or that are made about you, until the reported account is deleted.</p></div>
+        </li>
+        <li>
+          <div class="for">90 days<small>after you delete your account</small></div>
+          <div><p>If your account had a chat pause, a ban, reports against it, or an age range that went up, we keep that fact for 90 days so deleting and signing up again doesn't wipe it: whether typing was paused or the account was closed, how many reports and actions there were, and the age range. It's stored under a scrambled form of your account ID, with no name, car, photos, messages or anything else from your profile. An account with none of those leaves nothing behind.</p></div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="bay" aria-labelledby="dont">
+      <h2 id="dont">What we don't keep</h2>
+      <ul>
+        <li><strong>Photos you snap to build your car or check in a coffee.</strong> Each one is read once to pick the parts or the drink, then deleted. We keep only the answer, like "red hatch, lowered" or "iced oat latte".</li>
+        <li><strong>Your name, email address or Apple ID.</strong></li>
+        <li><strong>Your location.</strong> Photos are shrunk and saved again on your phone, which removes where they were taken. The game uses your time zone so passing cars match your local time.</li>
+        <li><strong>Your IP address.</strong> To stop spam we use a scrambled form of it, kept for a few days at most.</li>
+      </ul>
+    </section>
+
+    <section class="bay" aria-labelledby="phone">
+      <h2 id="phone">What stays on your phone</h2>
+      <p>Your settings and the random install ID live on your phone. Your beans, career stars and bests live on your phone too, and when you're signed in a copy is kept with your account, so a new phone or a reinstall gets them back. Only you can see that copy, and it's deleted with your account. Daily reminders are set up on your phone, so nothing about them is sent to us. Turn them off in the game's settings or in iPhone Settings.</p>
+    </section>
+
+    <section class="bay" aria-labelledby="who-sees">
+      <h2 id="who-sees">Who else sees your data</h2>
+      <ul>
+        <li><strong>Other players</strong> see what you show at the meet: your name, car and its plate, car file, messages, reactions and feed cards, and your real car photos if you add them. Only players 18 and older can see an Instagram handle, and nobody else is sent your age range. While you drive in the game's town, other players there see where your car is in the town and which place you've pulled into. That's a spot in the game, never where you really are, and it isn't kept after you leave.</li>
+        <li><strong>Apple</strong> handles Sign in with Apple, the age range sheet and payments. We never see your card details.</li>
+        <li><strong>Cloudflare</strong> runs our game server and stores the data listed above.</li>
+        <li><strong>Anthropic</strong>, the maker of Claude, reads car and cup photos, and checks real car photos, typed messages, car file words and liveries you paint on your car before anyone sees them. The game asks you before the first time anything of yours goes to it. Anthropic may not use it to train its models, and deletes it within 30 days, or later only if something breaks its rules.</li>
+      </ul>
+      <p>These companies may only use your data to run the game for us, and must protect it at least as well as this policy does. We never sell your data or share it for advertising. We'd only give it to anyone else if the law requires it, or to protect someone's safety.</p>
+    </section>
+
+    <section class="bay" aria-labelledby="kids">
+      <h2 id="kids">Kids</h2>
+      <p>Players under 13, and anyone who doesn't share an age range, get a name picked by the game. They can't type, add photos or an Instagram handle, or send photos to be read. They chat with quick phrases and reactions, and we don't ask them for anything more than the game needs to run. Like everyone, they can send us feedback from the Account screen: the note there asks for no personal details, only we read it, and it's deleted after 90 days.</p>
+      <p>Parents can ask us to delete a child's account in the game: <strong>Account</strong>, then <strong>Send feedback</strong> on the child's phone, or delete it there straight away: <strong>Account</strong>, then <strong>Delete my account</strong>.</p>
+    </section>
+
+    <section class="bay" aria-labelledby="choices">
+      <h2 id="choices">Your choices</h2>
+      <ul>
+        <li><strong>Delete your account</strong> in the game. On the map, tap Account (top right), then Delete my account. Your account, username, car, car file, photos, friends, scores, feed cards and messages are removed from our server straight away, and you're taken off other players' friend lists, gifts and reactions. Sign in with Apple is disconnected from the game. The only thing kept is the 90-day safety record described above, if there is one. Our host's automatic backups are gone within 30 days. The game on your phone keeps its own progress until you delete the app.</li>
+        <li><strong>Remove</strong> your car photos or Instagram handle at any time from your profile.</li>
+        <li><strong>Take back your permission</strong> for the photo and message checks at any time in the game. Photo reading and typing then turn off.</li>
+        <li><strong>Ask us</strong> for a copy of your data, to correct it, or to delete it, in the game: <strong>Account</strong>, then <strong>Send feedback</strong>. You can also delete your account yourself any time: <strong>Account</strong>, then <strong>Delete my account</strong>.</li>
+      </ul>
+      <p>If you live in the UK or the EU, you also have the right to limit or object to how we use your data and to take it elsewhere. We use your data to run the game you asked for, to keep it safe and fair and see what to improve, and, for photos and the checks above, with your permission, which you can take back at any time. You can complain to your data protection authority; in the UK that's the ICO.</p>
+      <p>We don't sell or share personal information, as California law uses those words.</p>
+    </section>
+
+    <section class="bay" aria-labelledby="where">
+      <h2 id="where">Where it's stored</h2>
+      <p>Our host runs the server on its network around the world, so your data may be handled outside your country, including in the United States. When data leaves the UK or the EU, our providers use the contract terms the law requires.</p>
+    </section>
+
+    <section class="bay" aria-labelledby="changes">
+      <h2 id="changes">Changes</h2>
+      <p>If this policy changes, we'll update the date at the top. If it's a big change, we'll tell you in the game first.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Questions: in the game: <strong>Account</strong>, then <strong>Send feedback</strong>.</p>
+    <p><a href="terms.html">Terms of use</a> · <a href="support.html">Pixel Car Meet support</a></p>
+  </footer>
+</div>
+</body>
+</html>
